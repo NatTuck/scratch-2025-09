@@ -6,6 +6,17 @@ use autodie;
 my @courses = qw(cs2010 cs2381 cs4140);
 
 for my $course (@courses) {
+    my @dirs = `find "$course" -type d`;
+    for my $dir (@dirs) {
+        if (-e "$dir/pom.xml") {
+            system(qq{(cd "$dir" && mvn clean)});
+        }
+
+        if ($dir =~ /\.git$/) {
+            die("Stray .git: $dir\n");
+        }
+    }
+
     my @paths = `find "$course" -type f`;
     for my $path (@paths) {
         chomp $path;
