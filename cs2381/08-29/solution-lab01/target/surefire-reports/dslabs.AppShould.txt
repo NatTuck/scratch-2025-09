@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: dslabs.AppShould
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.04 s <<< FAILURE! - in dslabs.AppShould
+dslabs.AppShould.passing_grade_works  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at dslabs.AppShould.passing_grade_works(AppShould.java:15)
+
