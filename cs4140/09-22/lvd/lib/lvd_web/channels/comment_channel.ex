@@ -4,11 +4,8 @@ defmodule LvdWeb.CommentChannel do
   @impl true
   def join("comments:" <> _name, payload, socket) do
     if authorized?(payload) do
-      socket =
-        socket
-        |> assign(:comments, [])
-
-      {:ok, socket}
+      {:ok, comments} = Lvd.CommentServer.list()
+      {:ok, comments, socket}
     else
       {:error, %{reason: "unauthorized"}}
     end
@@ -18,11 +15,7 @@ defmodule LvdWeb.CommentChannel do
   # by sending replies to requests from the client
   @impl true
   def handle_in("comment", %{"text" => text}, socket) do
-    comments = [text | socket.assigns[:comments]]
-
-    socket =
-      socket
-      |> assign(:comments, comments)
+    {:ok, comments} = Lvd.CommentServer.add(text)
 
     {:reply, {:ok, comments}, socket}
   end

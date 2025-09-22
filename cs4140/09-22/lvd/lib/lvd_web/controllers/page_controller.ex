@@ -6,12 +6,12 @@ defmodule LvdWeb.PageController do
   end
 
   def form(conn, %{"comment" => comment}) do
-    comments = [comment]
+    {:ok, comments} = Lvd.CommentServer.add(comment)
     render(conn, :form, comments: comments)
   end
 
   def form(conn, _params) do
-    comments = []
+    {:ok, comments} = Lvd.CommentServer.list()
     render(conn, :form, comments: comments)
   end
 
