@@ -1,0 +1,17 @@
+<div class="p-8">
+  <h1 class="text-4xl py-2">Form</h1>
+
+  <form action="/form" method="post">
+    <input type="hidden" name="_csrf_token" value={Plug.CSRFProtection.get_csrf_token()} />
+
+    <p>Comment:<br />
+      <input class="input" type="text" name="comment" />
+      <button class="btn btn-primary">Submit</button></p>
+  </form>
+
+  <h2 class="text-3xl py-2">Comments:</h2>
+
+  <%= for cc <- @comments do %>
+    <p>- {cc}</p>
+  <% end %>
+</div>

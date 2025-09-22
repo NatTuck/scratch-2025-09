@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      cash-dom:
+        specifier: ^8.1.5
+        version: 8.1.5
+
+packages:
+
+  cash-dom@8.1.5:
+    resolution: {integrity: sha512-/BS05CfzyHR5xT2ksKj1sDLPaOv5rSmIwoGxNgdKwUtnIuiJ5neMxVEmZxvfyJiSjGbOMD0Lwe+9v+fszDqHew==}
+
+snapshots:
+
+  cash-dom@8.1.5: {}

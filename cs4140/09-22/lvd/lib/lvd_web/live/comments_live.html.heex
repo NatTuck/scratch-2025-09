@@ -1,0 +1,15 @@
+<div class="p-8">
+  <h1 class="text-4xl py-2">Form</h1>
+
+  <.form for={@form} phx-submit="save" phx-change="update">
+    <p>Comment:<br />
+      <.input field={@form[:comment]} class="input" type="text" />
+      <button class="btn btn-primary">Submit</button></p>
+  </.form>
+
+  <h2 class="text-3xl py-2">Comments:</h2>
+
+  <%= for cc <- @comments do %>
+    <p>- {cc}</p>
+  <% end %>
+</div>
