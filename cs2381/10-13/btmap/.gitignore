@@ -1,0 +1,7 @@
+# Build Artifacts
+target/
+
+# Editors
+*~
+.*#
+.aider*
