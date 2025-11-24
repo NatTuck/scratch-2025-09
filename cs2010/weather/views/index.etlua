@@ -1,0 +1,7 @@
+<div>
+  <h1>Get Weather</h1>
+  <form action="/weather" method="post">
+    <p>Enter zip: <input type="text" name="zip"></p>
+    <p><button>Go</button></p>
+  </form>
+</div>
